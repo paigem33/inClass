@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate method position</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script> //long hand, short hand is $(function(){})
+        $(function(){
+            $('.b1').click(function(){
+                $('.c1').animate({
+                    marginLeft:'200px',
+                    top:'200px'
+                });
+            }) //end b1
+            $('.b2').click(function(){
+                $('.c2').animate({marginLeft:'75px'}).animate({top:'90px'}); //if you chain the animation together they do one after the other rather than at the same time
+            }) //end b2
+            $('.b3').click(function(){
+                $('.c3').animate({
+                    top:'+=30px',
+                    left:'+=30px',
+                    width:'+=10px',
+                    height:'+=10px',
+                    fontSize:'+=2px'
+                })
+            }) //end b3
+            $('.b4').click(function(){
+                $('.c4').animate({
+                    width:'toggle',
+                    height:'toggle'
+                })
+            })
+            //animate method: $(selector).animate({property:values,...}duration)
+        }); //doc ready
+    </script>
+    <style>
+        article {
+            width: 300px;
+        }
+        .clearIt {
+            clear: both;
+        }
+        .circle {
+            background-color: #7ac4ea;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            position: relative;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            margin-bottom: 10px;
+        }
+        .c3 {
+            background-color: #7aeac6;
+        }
+    </style>
+</head>
+<body>
+   <section>
+       <header>
+           <h1>this be a header</h1>
+       </header>
+       <article>
+         <button class="b1">Start Animation 1</button>
+         <button class="b2">Start Animation 2</button>
+         <button class="b3">Click me</button>
+         <button class="b4">Click me, too</button>
+         <div class="circle c1">1</div>
+          <div class="circle c2">2</div> 
+          <div class="circle c3">3</div>
+          <div class="circle c4">4</div>
+        </article>
+   </section>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate find</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script> //long hand, short hand is $(function(){})
+        $(function(){
+            $('.box').hover(function(){
+                $(this).find('.circle').stop(true,true).fadeOut(1000);
+            }, function(){
+                $(this).find('.circle').stop(true,true).fadeIn(1000);
+            })
+        }); //doc ready
+    </script>
+    <style>
+        article {
+            width: 300px;
+        }
+        .box {
+            border: solid 3px #ccc;
+            background-color: #7ac4ea;
+            width: 300px;
+            height: 150px;
+            position: relative;
+            margin: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            margin-bottom: 10px;
+        }
+        .circle {
+            background-color: indianred;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+   <section>
+       <header>
+           <h1>this be a header</h1>
+       </header>
+       <article>
+         <button class="b1">Start</button>
+<!--
+         <button class="b2">Stop</button>
+         <button class="b3">Back</button>
+         <button class="b4">Reset</button>
+-->
+         <div class="box">
+            <div class="circle"></div>
+        </div>
+<!--
+          <div class="circle c2">2</div> 
+          <div class="circle c3">3</div>
+          <div class="circle c4">4</div>
+-->
+        </article>
+   </section>
+</body>
+</html>
