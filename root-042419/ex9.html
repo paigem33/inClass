@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate find</title>
+    <link rel="stylesheet" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script> //long hand, short hand is $(function(){})
+        $(function(){
+            $('.b1').click(function(){
+                $('img').attr({
+                    'class':'frame',
+                    'title':'baby cat lookin cute'
+                });
+                $('.description').text('Cat looking cute, living its best life');
+            })
+        }); //doc ready
+    </script>
+    <style>
+        .frame {
+            border: solid 5px indianred
+        }
+    </style>
+</head>
+<body>
+   <section>
+       <header>
+           <h1>this be a header</h1>
+       </header>
+       <article>
+             <button class="b1">Whats this?</button>
+             <p>
+                 <img src="downloadCat.jpg" alt="Cat">
+                 <br>
+                 <span class="description"></span>
+             </p>
+             
+        </article>
+   </section>
+</body>
+</html>

@@ -8,14 +8,14 @@
     <script> //long hand, short hand is $(function(){})
         $(function(){
             $('.b1').click(function(){
-                $('p').text('This is new text');
+                var myUrl = $('a').attr('href');
+                alert(myUrl);
             })
             $('.b2').click(function(){
-                $('p:first').text('This is number 1');
+                var descrip = $('p:last img').attr('alt');
+                $('.description').text(descrip);
             })
-            $('.b3').click(function(){
-                $('.bouns').html('This is <em><strong>special</strong></em>');
-            })
+
         }); //doc ready
     </script>
     <style>
@@ -28,13 +28,13 @@
            <h1>this be a header</h1>
        </header>
        <article>
-             <button class="b1">Set all the paragraph text</button>
-             <button class="b2">Set the first paragraph text</button>
-             <button class="b3">Set new paragraph text</button>
-             <p>This is the first paragraph</p>
-             <p>This is the second paragraph</p>
-             <p class="bonus">This is the third paragraph</p>
-             <p class="display"></p>
+             <button class="b1">Get href</button>
+             <button class="b2">What that</button>
+             <p>This is the first paragraph. Check out <a href="http://www.google.com">Google</a>.</p>
+             <p><img src="downloadCat.jpg" alt="Cat">
+             <span class="description"></span>
+             </p>
+             
         </article>
    </section>
 </body>
