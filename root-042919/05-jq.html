@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 05 - inserting content, wrap method</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        p {
+            margin-top: .25em;
+        }
+        span {
+            font-weight: bold;
+        } 
+        .results {
+            color: teal;
+            border: solid 8px #ccc;
+            padding: 2em;
+            margin: 10px 0;
+        }
+        hr {
+            margin: .5em auto;
+        }   
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.contain').wrap('<div class="results"></div>');
+            $('button.w').click(function(){
+                $('.contain p').contents().wrap('<strong><em></em></strong>');
+                $('.contain').wrap('<div class="results"></div>');
+            });
+            // unwrap removes the parent elements of the selected element
+            $('button.uw').click(function(){
+                $('.contain').unwrap();
+            });
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Hello.</h1>
+    </header>
+    <article>
+       <hr>
+       <button class="w">Wrap button</button>
+       <button class="uw">Unwrap it</button>
+       <hr>
+       <div class="contain">
+           <p>This is some important text</p>
+       </div>
+    </article>
+    
+</section>
+</body>
+</html>

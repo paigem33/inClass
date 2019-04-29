@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 03 - inserting content (before and after)</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        p {
+            margin-top: .25em;
+        }
+        span {
+            font-weight: bold;
+        } 
+        .results {
+            color: teal;
+        }
+        hr {
+            margin: .5em auto;
+        }
+        h1 {
+            display: inline-block;
+        }
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.contain').before('<p>&mdash; Demo text follows &mdash;</p>').after('<p>&mdash; This is the end &mdash;</p>').css('font-style','italic');
+            
+            $('.insert-before').click(function(){
+                $('h1').before('&diams; ').prepend('&hearts; ');
+            });
+            $('.insert-after').click(function(){
+                $('h1').after(' &diams;').append('  &hearts;');
+            })
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Hello</h1>
+    </header>
+    <article>
+<!--      hr+button.insert-{Insert }*2+hr+div.contain>p*2>lorem-->
+       <hr>
+       <button class="insert-before">Insert Before</button>
+       <button class="insert-after">Insert After</button>
+       <hr>
+       <div class="contain">
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi error molestias adipisci facilis, vel! Dolor dignissimos, odio illo dolorem at obcaecati distinctio quos blanditiis cumque rerum excepturi magni praesentium necessitatibus!</p>
+           <p>Voluptas perferendis nisi autem ullam eum necessitatibus neque accusamus perspiciatis deleniti ducimus, distinctio soluta doloribus laboriosam cupiditate. Soluta expedita impedit odit aliquam! Dolore, repellendus quisquam, similique atque necessitatibus consequuntur unde?</p>
+       </div>
+    </article>
+    
+</section>
+</body>
+</html>

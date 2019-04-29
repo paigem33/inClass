@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 08 - jQuery dimensions</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        
+        hr {
+            margin: .5em auto;
+        }  
+        button {
+            margin-bottom: .5em;
+        }
+        .box {
+            width: 20%;
+            height: 8em;
+            background-color: #069;
+            margin: 20px;
+            padding: 10px;
+            border: solid 5px #97e681;
+        }
+        .b2 {
+            background-color: #91496a;
+            border-color: #c97b9d;
+        }
+        .b3 {
+            background-color: #97e681;
+            border-color: #008ab1;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(window).resize(function(){
+                var boxWidth = Math.round($('.b1').width());
+                var boxHeight = $('.b1').height();
+
+                $('#results').html('Width: '+ boxWidth + ', Height: '+ boxHeight);
+                $('.b1').removeAttr('style');
+            });
+            
+            $('.btnB1').click(function(){
+                $('.b1').width('25%').height(150);
+                var boxWidth = $('.b1').width();
+                var boxHeight = $('.b1').height();
+                $('#results').html('Width: '+ boxWidth + ', Height: '+ boxHeight);
+            });
+            
+            // INNER WIDTH/HEIGHT - accounts for any padding
+            $('.btnB2').click(function(){
+                var boxWidth = $('.b2').innerWidth();
+                $('#results2').html('Inner Width: '+ boxWidth);
+            });
+            
+            // OUTER WIDTH/HEIGHT - includes border and margin
+            $('.btnB3').click(function(){
+//                var boxWidth = $('.b3').outerWidth(); // without true it gets the width including the border but not margin
+                var boxWidth = $('.b3').outerWidth(true);
+                $('#results3').html('Outer Width: '+ boxWidth);
+            });
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Hello.</h1>
+    </header>
+    <article class="results">
+     
+      <div class="box b1"></div>
+      <button class="btnB1">Set w/h</button>
+      <p id="results"></p>
+      
+      <div class="box b2"></div>
+      <button class="btnB2">Get inner w/h</button>
+      <p id="results2"></p>
+      
+       <div class="box b3"></div>
+      <button class="btnB3">Get outer w/h</button>
+      <p id="results3"></p>
+      
+    </article>
+    
+</section>
+</body>
+</html>

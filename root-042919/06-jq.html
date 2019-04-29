@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 06 - removing content (empty method)</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        p {
+            margin-top: .25em;
+        }
+        span {
+            font-weight: bold;
+        } 
+        .results {
+            color: teal;
+            border: solid 8px #ccc;
+            padding: 2em;
+            margin: 10px 0;
+        }
+        hr {
+            margin: .5em auto;
+        }   
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.empty').click(function(){
+                // empty method removes all child elements and their descendants
+                $('.results').empty();
+                $('.results').html('<p>Thank you for clicking the button. Good day to you.</p>');
+            });
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Hello.</h1>
+    </header>
+    <article class="results">
+       <p class="special"><strong>Note:</strong> If you click the button that follows this paragraph, you will remove all of the contents of this box</p>
+       <button class="empty">Empty this box</button>
+    </article>
+    
+</section>
+</body>
+</html>

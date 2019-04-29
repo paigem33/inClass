@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery example 02 - inserting content</title>
+    <link rel="stylesheet" href="css/base.css">
+    <style>
+        p {
+            margin-top: .25em;
+        }
+        span {
+            font-weight: bold;
+        } 
+        .results {
+            color: teal;
+        }
+        hr {
+            margin: .5em auto;
+        }
+        
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('#btnMsg').click(function(){
+                var name = $('#name').val();
+                var comments = $('#comment').val();
+                var city = $('#city').val();
+                
+                $('.results').prepend('<h3>Here is your message:</h3>');
+                $('.you').prepend(name);
+                $('.info').text(comments).prepend('You said " ').append('" <br> &mdash; ' + name +' from ' + city);
+                
+            });
+
+        }) // end doc ready
+    </script>
+</head>
+<body>
+<section>
+    <header>
+        <h1>Hello.</h1>
+    </header>
+    <article>
+       <form action="">
+           <div>
+               <label for="name">Name:
+               <input type="text" id="name"></label>
+           </div>
+           <div>
+               <label for="comment">Comments
+                   <textarea id="comment"></textarea>
+                </label>
+           </div>
+           <div>
+               <label for="">Your City
+                   <select name="city" id="city">
+                      <option value="">Select...</option>
+                       <option value="sd">San Diego</option>
+                       <option value="la">LA</option>
+                       <option value="sb">Santa Barbara</option>
+                   </select>
+               </label>
+           </div>
+       </form>
+       <p><span>Note: </span>Please fill out the form above and click the following button to get your message.</p>
+       <button id="btnMsg">Message</button>
+       <hr>
+    </article>
+    
+    <article class="results">
+        <p>Hey <span class="you"></span></p>
+        <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum deleniti cum, doloribus nesciunt at placeat et distinctio qui commodi voluptatibus nostrum id dignissimos cumque harum ut odio doloremque officia non.</p>
+        <p>Have a nice day <span class="you"></span> :)</p>
+    </article>
+    
+</section>
+</body>
+</html>
