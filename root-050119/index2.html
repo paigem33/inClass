@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sibling method</title>
+    <style>
+        .highlight {
+            background-color: darksalmon;
+        }
+        .outline {
+            border: solid 2px black
+        }
+        .hl2 {
+            font-size: 2em;
+            color:aqua;
+        }
+        .hl3 {
+            font-style: italic;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //sibling selectors: next, nextAll, nextUntil, prev, prevAll
+           $('header p').siblings().addClass('outline');
+            $('section p').siblings('ul').addClass('hl2');
+            $('p').nextAll().addClass('hl3');
+            $('p').nextUntil('ul').css('text-decoration','underline');
+        })
+    </script>
+</head>
+<body>
+    <section>
+        <header>
+            <h1>hey</h1>
+            <h2>hey hey hey</h2>
+            <p>sup</p>
+            <p>yo</p>
+        </header>
+        <article>
+            <h2>yo</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repellendus aliquid, sunt excepturi eaque nam itaque, temporibus nihil quidem, doloribus earum. Corporis rem at reiciendis, placeat deleniti laboriosam beatae, fugit.</p>
+            <ul>
+                <li>1</li>
+                <li><p>2</p></li>
+                <li>3</li>
+            </ul>
+        </article>
+    </section>
+</body>
+</html>

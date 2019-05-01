@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filtering</title>
+    <style>
+        .highlight {
+            background-color: darksalmon;
+        }
+        .outline {
+            border: solid 2px black
+        }
+        .hl2 {
+            font-size: 2em;
+            color:aqua;
+        }
+        .hl3 {
+            font-style: italic;
+        }
+        .outline2 {
+            border: solid 5px indianred;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('ul li').has('ul').addClass('outline2');
+            $('header').not(':has(h1)').addClass('hl2');
+        });
+    </script>
+</head>
+<body>
+    <section>
+        <header>
+            <h1>hey</h1>
+            <h2>hey hey hey</h2>
+            <p>sup</p>
+        </header>
+        <article>
+            <header>
+                <h2>yo</h2>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus repellendus aliquid, sunt excepturi eaque nam itaque, temporibus nihil quidem, doloribus earum. Corporis rem at reiciendis, placeat deleniti laboriosam beatae, fugit.</p>
+            <ul>
+                <li>1</li>
+                <li><ul>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ul></li>
+                <li>3</li>
+            </ul>
+        </article>
+    </section>
+</body>
+</html>
