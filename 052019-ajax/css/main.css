@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:300,600,700|Satisfy');
+* {
+    margin:0;
+    padding:0;
+}
+body {
+    background: #99b8a8;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 300;
+    width: 100%;
+    height:100%;
+}
+section {
+    max-width:960px;
+    width:90%;
+    margin:auto;
+    padding:1em;
+    background-color:rgba(255, 255, 255, .8);
+    position: relative;
+}
+h1 {
+    font-weight: 700;
+    font-size: 2.8em
+}
+h3{
+    font-weight:600;
+    font-size: 2em;
+}
+p {
+    margin-bottom:1em;
+}
+ul {
+    margin-left:2.5em;
+}
+#gallery {
+            background-color:#767a63;
+            width:80px;
+            padding: 10px;
+            position: absolute;
+            right:-85px;
+            top:20px; 
+        }
+        #gallery img {
+            display: inline-block;
+            margin:10px;
+            padding:2px;
+            border:solid 1px #333;
+            zoom:.6;
+        }
+        .onLeft {
+            float:left;
+            margin-right:10px;
+        }
+        .content:after, article:after {
+            content:"";
+            display:block;
+            clear:both;
+        }
+        section {
+            position: relative;
+            overflow: hidden;
+        }
+.clearIt {
+    clear:both;
+}      
+/*new CSS*/
+#col1, #col2 {
+    box-sizing: border-box;
+}
+#col1 {
+    float:left;
+    padding-right:1em;
+    width:75%;
+}
+#col2 {
+    float:left;
+    width:25%;
+}
+#col1 li {
+    display:inline-block;
+    width:33%;
+}
+#sCrit img {
+    width:100%;
+}
+#sCrit .info {
+    position: absolute;
+    width: 25%;
+    margin-left: 2%;
+    top: 50%;
+    font-size: 85%;
+    line-height: 1.2;
+    background: #fff;
+    border: 1px solid #99b8a8;
+    border-radius: 4px;
+    padding: 4px;
+    display: none;
+}
+ul#description {
+    list-style: none;
+    margin-left:0;
+}

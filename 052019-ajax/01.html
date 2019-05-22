@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>01 - AJAX and AHAH</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section>
+        <header>
+            <h1>Sea Creatures</h1>
+        </header>
+ 
+<!--        section#col1>ul#sCrit>li*3>article>a>img[src=images/0$.jpg]^h4+p{Some text about }+div.info>lorem       -->
+ <section id="col1">
+     <ul id="sCrit">
+         <li>
+             <article>
+                 <a href="images/01.jpg"><img src="images/01.jpg" alt=""></a>
+                 <h4>Sea Turtle</h4>
+                 <p>Some text about turtles...</p>
+                 <div class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at sit veniam sapiente, dolorum excepturi accusamus tempore architecto voluptate. Quod non adipisci impedit eligendi unde aspernatur quia expedita aliquid molestiae!</div>
+             </article>
+         </li>
+         <li>
+             <article>
+                 <a href="images/02.jpg"><img src="images/02.jpg" alt=""></a>
+                 <h4>Horn Sharks</h4>
+                 <p>Some text about horn sharks</p>
+                 <div class="info">Eveniet illo cumque eligendi, quam iste hic omnis eius maiores temporibus, vitae sint! Expedita laborum ex, rerum quos corporis ipsum libero accusamus praesentium labore repudiandae exercitationem est, tempore dignissimos eaque!</div>
+             </article>
+         </li>
+         <li>
+             <article>
+                 <a href="images/03.jpg"><img src="images/03.jpg" alt=""></a>
+                 <h4>Sea Lion</h4>
+                 <p>Some text about Sea Lions</p>
+                 <div class="info">Accusantium aliquid facilis architecto doloremque, incidunt repudiandae totam fugit qui eius porro, ab voluptatem. Quis dicta, quo alias eaque facere odio, sunt esse consequatur labore dolorem quas, necessitatibus impedit, earum?</div>
+             </article>
+         </li>
+     </ul>
+ </section> <!-- end col1 -->
+   
+<!--   section#col2>ul#description>li>div#critterDescription>h3{Learn more}+p{Select a critter to find out more about it}-->
+   <section id="col2">
+       <ul id="description">
+           <li>
+               <div id="critterDescription">
+                   <h3>Learn more</h3>
+                   <p>Select a critter to find out more about it</p>
+               </div>
+           </li>
+       </ul>
+   </section><!-- end col2 -->
+    </section>
+    
+    <script>
+        $(function(){
+           $('#sCrit').find('a').on('click', function(e){
+               e.preventDefault();
+//               $('#critterDescription').load('fragments/seaTurtle.html');
+               var $desc = $('#critterDescription');
+               switch($(this).attr('href')) {
+                   case 'images/01.jpg':
+                       $desc.load('fragments/seaTurtle.html');
+                       break;
+                   case 'images/02.jpg':
+                       $desc.load('fragments/shark.html');
+                       break;
+                   case 'images/03.jpg':
+                       $desc.load('fragments/seal.html');
+                       break;
+               }
+           }) 
+        }); //end doc ready
+    </script>
+</body>
+</html>
